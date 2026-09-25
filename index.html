@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Search Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <main class="container">
+
+
+        <!-- Dashboard Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="eyebrow">JOB TRACKER</p>
+
+                <h1>Job Search Dashboard</h1>
+
+                <p class="subtitle">
+                    Track your opportunities, applications and interviews in one place.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="theme-btn"
+                    class="theme-btn"
+                    type="button"
+                >
+                    🌙 Dark
+                </button>
+
+
+                <button
+                    id="add-job-btn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    + Add Job
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard Statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span id="total-jobs">0</span>
+
+                <p>Total Jobs</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span id="applied-jobs">0</span>
+
+                <p>Applied</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span id="interview-jobs">0</span>
+
+                <p>Interviews</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add / Edit Job Form -->
+
+        <section class="form-section">
+
+            <form id="job-form" hidden>
+
+                <h2>Job Details</h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="title">
+                            Job Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="company">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="source">
+                            Source
+                        </label>
+
+                        <input
+                            type="text"
+                            id="source"
+                            name="source"
+                            placeholder="LinkedIn, Internshala..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="applyUrl">
+                            Apply URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="applyUrl"
+                            name="applyUrl"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                            name="deadline"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select
+                            id="status"
+                            name="status"
+                            required
+                        >
+
+                            <option value="">
+                                Select status
+                            </option>
+
+                            <option value="Saved">
+                                Saved
+                            </option>
+
+                            <option value="Applied">
+                                Applied
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Rejected">
+                                Rejected
+                            </option>
+
+                            <option value="Selected">
+                                Selected
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Notes -->
+
+                    <div class="form-group full-width">
+
+                        <label for="notes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Add anything important about this job..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Form Buttons -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="save-job-btn"
+                        class="primary-btn"
+                    >
+                        Save Job
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancel-btn"
+                        class="secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Saved Jobs -->
+
+        <section class="jobs-section">
+
+
+            <div class="section-header">
+
+                <h2>Saved Jobs</h2>
+
+            </div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="empty-state"
+                class="empty-state"
+            >
+
+                <h3>
+                    No jobs added yet
+                </h3>
+
+                <p>
+                    Start tracking your job applications by adding your first job.
+                </p>
+
+                <button
+                    id="empty-add-btn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    + Add Your First Job
+                </button>
+
+            </div>
+
+
+            <!-- Jobs will be added here by JavaScript -->
+
+            <div
+                id="job-list"
+                class="job-list"
+            ></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,562 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BASE
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f7;
+    color: #20252b;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 40px auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background: #ffffff;
+    border: 1px solid #e2e6ea;
+    border-radius: 14px;
+
+    padding: 28px 30px;
+    margin-bottom: 24px;
+
+    box-shadow: 0 4px 16px rgba(20, 30, 40, 0.05);
+}
+
+.dashboard-header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4f6f8f;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #6b737c;
+    max-width: 550px;
+    line-height: 1.5;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.primary-btn {
+    background: #3f6f9f;
+    color: #ffffff;
+    padding: 11px 18px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: #345e87;
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    background: #eef1f4;
+    color: #374151;
+    padding: 11px 18px;
+    border: 1px solid #d9dee4;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.secondary-btn:hover {
+    background: #e2e6ea;
+}
+
+.theme-btn {
+    background: #eef1f4;
+    color: #374151;
+
+    border: 1px solid #d9dee4;
+    border-radius: 8px;
+
+    padding: 10px 15px;
+
+    transition: 0.2s ease;
+}
+
+.theme-btn:hover {
+    background: #e3e7eb;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #27313b;
+    border: 1px solid #35414d;
+    border-radius: 12px;
+
+    padding: 23px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Blue accent */
+
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #6d93b8;
+}
+
+
+/* Hover */
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #4c5966;
+
+    box-shadow:
+        0 12px 25px rgba(20, 30, 40, 0.16);
+}
+
+.stat-card span {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.stat-card p {
+    color: #aeb8c2;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-section {
+    margin-bottom: 35px;
+}
+
+#job-form {
+    background: #ffffff;
+
+    border: 1px solid #e2e6ea;
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 4px 16px rgba(20, 30, 40, 0.05);
+}
+
+#job-form h2 {
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    background: #f8f9fa;
+
+    border: 1px solid #d9dee4;
+
+    border-radius: 7px;
+
+    font: inherit;
+    color: #20252b;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #6d93b8;
+
+    box-shadow:
+        0 0 0 3px rgba(109, 147, 184, 0.12);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   JOB LIST
+========================= */
+
+.jobs-section {
+    margin-top: 24px;
+}
+
+.section-header {
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    color: #20252b;
+}
+
+.job-list {
+    display: grid;
+    gap: 18px;
+}
+
+.job-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 4px 14px rgba(20, 30, 40, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(20, 30, 40, 0.09);
+}
+
+.job-card h3 {
+    margin-bottom: 12px;
+}
+
+.job-card p {
+    margin-bottom: 7px;
+    color: #56616c;
+}
+
+
+/* =========================
+   JOB BUTTONS
+========================= */
+
+.job-card .apply-btn {
+    display: inline-block;
+
+    margin-top: 12px;
+    margin-right: 8px;
+
+    padding: 9px 14px;
+
+    background: #3f6f9f;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    transition: 0.2s ease;
+}
+
+.job-card .apply-btn:hover {
+    background: #345e87;
+}
+
+.job-card button {
+    margin-top: 12px;
+    margin-right: 8px;
+
+    padding: 9px 14px;
+
+    border-radius: 7px;
+
+    transition: 0.2s ease;
+}
+
+.job-card .edit-btn {
+    background: #eef3f8;
+    color: #416987;
+
+    border: 1px solid #d6e0e8;
+}
+
+.job-card .edit-btn:hover {
+    background: #e1eaf2;
+}
+
+.job-card .delete-btn {
+    background: #f8eeee;
+    color: #a34d4d;
+
+    border: 1px solid #ead4d4;
+}
+
+.job-card .delete-btn:hover {
+    background: #f2dfdf;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    background: #ffffff;
+
+    border: 1px dashed #cbd2d9;
+    border-radius: 14px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 14px rgba(20, 30, 40, 0.04);
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #6b737c;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #171b20;
+    color: #e5e7eb;
+}
+
+.dark-mode .dashboard-header,
+.dark-mode #job-form,
+.dark-mode .job-card,
+.dark-mode .empty-state {
+    background: #20252b;
+
+    border-color: #303841;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+.dark-mode .subtitle,
+.dark-mode .empty-state p {
+    color: #9ca5af;
+}
+
+.dark-mode .section-header h2,
+.dark-mode #job-form h2 {
+    color: #e5e7eb;
+}
+
+
+/* Dark theme button */
+
+.dark-mode .theme-btn {
+    background: #2a3037;
+    color: #e5e7eb;
+
+    border-color: #3a424c;
+}
+
+.dark-mode .theme-btn:hover {
+    background: #333a43;
+}
+
+
+/* Dark inputs */
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background: #191e23;
+
+    color: #e5e7eb;
+
+    border-color: #39424c;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group select:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: #6d93b8;
+
+    box-shadow:
+        0 0 0 3px rgba(109, 147, 184, 0.14);
+}
+
+
+/* Dark secondary button */
+
+.dark-mode .secondary-btn {
+    background: #2a3037;
+
+    color: #d8dde3;
+
+    border-color: #3a424c;
+}
+
+
+/* Dark job buttons */
+
+.dark-mode .job-card .edit-btn {
+    background: #293846;
+
+    color: #9fc0dd;
+
+    border-color: #3c5265;
+}
+
+.dark-mode .job-card .delete-btn {
+    background: #392a2b;
+
+    color: #e4a2a2;
+
+    border-color: #543839;
+}
+
+.dark-mode .job-card p {
+    color: #aeb6bf;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .dashboard-header h1 {
+        font-size: 28px;
+    }
+
+}
